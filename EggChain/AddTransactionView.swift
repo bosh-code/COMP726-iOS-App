@@ -114,7 +114,7 @@ struct AddTransactionView: View {
 				if let responseJSON = responseJSON as? [String: Any] {
 					print(responseJSON)
 					self.alertTitle = "Success"
-					self.confirmationMessage = "\(responseJSON.description)"
+					self.confirmationMessage = "\(responseJSON.description.replacingOccurrences(of: "[\"message\": ", with: "").replacingOccurrences(of: "]", with: ""))"
 					self.showingConfirmation = true
 				} else {
 					print("Invalid response from server")
