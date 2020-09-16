@@ -7,10 +7,32 @@
 
 import SwiftUI
 
+var prospects = Prospects()
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+		TabView {
+			ProspectsView(filter: .none)
+				.tabItem {
+					Image(systemName: "link.circle.fill")
+					Text("Tab 1")
+				}
+			ProspectsView(filter: .contacted)
+				.tabItem {
+					Image(systemName: "link.icloud.fill")
+					Text("Tab 2")
+				}
+			ProspectsView(filter: .uncontacted)
+				.tabItem {
+					Image(systemName: "exclamationmark.circle.fill")
+					Text("Tab 3")
+				}
+			MeView()
+				.tabItem {
+					Image(systemName: "questionmark.circle.fill")
+					Text("About")
+				}
+		}.environmentObject(prospects)
     }
 }
 
