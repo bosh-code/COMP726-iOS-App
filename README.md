@@ -16,13 +16,13 @@ The EggBlockchain repo hosts code for the macOS Swift node this app interfaces w
 
 ### Building and running
 
-* Ensure the [EggBlockchain](example.com) is running on your mac. Visit http://localhost:8000/chain to verify.
+* Ensure the [EggBlockchain](https://github.com/bosh-code/EggBlockchain) is running on your mac. Visit http://localhost:8000/chain to verify. [The README.md](https://github.com/bosh-code/EggBlockchain/blob/main/README.md) contains more information on building and running the node.
 * Clone the repo into XCode using GitHub or clone locally and open the .xcodeproj.
 * Change the development team to your own and confirm build targets are correct.
 
 ## Features
 
-* If you are running a simulated device, ensure that 
+* If you are running a simulated device, ensure that you download the sample QR code and choose it when using the scanner.
 
 ## Licensing
 
