@@ -16,7 +16,7 @@ The EggBlockchain repo hosts code for the macOS Swift node this app interfaces w
 
 ### Building and running
 
-* Ensure the [EggBlockchain](https://github.com/bosh-code/EggBlockchain) is running on your mac. Visit http://localhost:8000/chain to verify. [The README.md](https://github.com/bosh-code/EggBlockchain/blob/main/README.md) contains more information on building and running the node.
+* Ensure the [EggBlockchain](https://github.com/bosh-code/EggBlockchain) is running on your mac. Visit http://localhost:8000/chain to verify. The [README.md](https://github.com/bosh-code/EggBlockchain/blob/main/README.md) contains more information on building and running the node.
 * Clone the repo into XCode using GitHub or clone locally and open the .xcodeproj.
 * Change the development team to your own and confirm build targets are correct.
 
@@ -30,5 +30,5 @@ This project is licensed under Unlicense license.
 
 ## Acknowledgments
 
-Paul Hudson for the [QRCode Scanner](https://github.com/twostraws/CodeScanner)
-Harsh Vishwakarma for the basis of the [Swift Blockchain](https://medium.com/@mhacnagbani/blockchain-by-swift-cddd4e1d02eb)
+* Paul Hudson for the [QRCode Scanner](https://github.com/twostraws/CodeScanner)
+* Harsh Vishwakarma for the basis of the [Swift Blockchain](https://medium.com/@mhacnagbani/blockchain-by-swift-cddd4e1d02eb)
