@@ -15,9 +15,9 @@ enum FilterType {
 struct ProspectsView: View {
 	@State private var isShowingScanner = false
 	@EnvironmentObject var prospects: Prospects
-	
+
 	let filter: FilterType
-	
+
 	var body: some View {
 		NavigationView {
 			List {
@@ -48,8 +48,8 @@ struct ProspectsView: View {
 								.font(.body)
 								.foregroundColor(.white)
 						}
-						VStack{
-							HStack{
+						VStack {
+							HStack {
 								Spacer()
 								Button(action: {
 									self.isShowingScanner = false
@@ -68,7 +68,7 @@ struct ProspectsView: View {
 			}
 		}
 	}
-	
+
 	var filteredEggs: [Prospect] {
 		switch filter {
 		case .none:
@@ -79,18 +79,19 @@ struct ProspectsView: View {
 			return prospects.people.filter { !$0.isContacted }
 		}
 	}
-	
+
 	func handleScan(result: Result<String, CodeScannerView.ScanError>) {
-		self.isShowingScanner = false
+		isShowingScanner = false
 		switch result {
 		case .success(let code):
-			let details = code.components(separatedBy: "\n")
+			print("Scanned QR!")
+			let details = code.components(separatedBy: ",")
+			print(details)
 			guard details.count == 2 else { return }
 			let person = Prospect()
 			person.name = details[0]
 			person.emailAddress = details[1]
-			
-			self.prospects.people.append(person)
+			prospects.people.append(person)
 		case .failure(let error):
 			print("Scanning failed: \(error)")
 		}

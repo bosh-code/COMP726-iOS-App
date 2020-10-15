@@ -10,17 +10,17 @@ import SwiftUI
 var prospects = Prospects()
 
 struct ContentView: View {
-    var body: some View {
+	var body: some View {
 		TabView {
 			ProspectsView(filter: .none)
 				.tabItem {
 					Image(systemName: "link.circle.fill")
 					Text("Tab 1")
 				}
-			ProspectsView(filter: .contacted)
+			TransactionView()
 				.tabItem {
 					Image(systemName: "link.icloud.fill")
-					Text("Tab 2")
+					Text("Transaction View")
 				}
 			ProspectsView(filter: .uncontacted)
 				.tabItem {
@@ -33,11 +33,11 @@ struct ContentView: View {
 					Text("About")
 				}
 		}.environmentObject(prospects)
-    }
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+	static var previews: some View {
+		ContentView()
+	}
 }

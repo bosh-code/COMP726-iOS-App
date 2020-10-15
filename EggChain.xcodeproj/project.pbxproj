@@ -15,6 +15,9 @@
 		0296140424F3280E0051B5AD /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296140324F3280D0051B5AD /* Prospect.swift */; };
 		0296140624F328960051B5AD /* PropectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296140524F328960051B5AD /* PropectsView.swift */; };
 		0296140824F3292D0051B5AD /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296140724F3292D0051B5AD /* MeView.swift */; };
+		02AEFFBB252936E20031A3E1 /* FetchTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AEFFBA252936E20031A3E1 /* FetchTransaction.swift */; };
+		02AEFFBE252938EA0031A3E1 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AEFFBD252938EA0031A3E1 /* TransactionView.swift */; };
+		02AEFFC12529444E0031A3E1 /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 02AEFFC02529444E0031A3E1 /* example.json */; };
 		02C3AB6924F4B1D200D2FB90 /* InfoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB6824F4B1D200D2FB90 /* InfoSheetView.swift */; };
 		02C3AB6B24F4B66900D2FB90 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB6A24F4B66900D2FB90 /* Transaction.swift */; };
 		02C3AB6D24F50EC600D2FB90 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB6C24F50EC600D2FB90 /* AddTransactionView.swift */; };
@@ -31,6 +34,9 @@
 		0296140324F3280D0051B5AD /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		0296140524F328960051B5AD /* PropectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropectsView.swift; sourceTree = "<group>"; };
 		0296140724F3292D0051B5AD /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		02AEFFBA252936E20031A3E1 /* FetchTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTransaction.swift; sourceTree = "<group>"; };
+		02AEFFBD252938EA0031A3E1 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		02AEFFC02529444E0031A3E1 /* example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
 		02C3AB6824F4B1D200D2FB90 /* InfoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheetView.swift; sourceTree = "<group>"; };
 		02C3AB6A24F4B66900D2FB90 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		02C3AB6C24F50EC600D2FB90 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 				02C3AB6824F4B1D200D2FB90 /* InfoSheetView.swift */,
 				02C3AB6A24F4B66900D2FB90 /* Transaction.swift */,
 				02C3AB6C24F50EC600D2FB90 /* AddTransactionView.swift */,
+				02AEFFBA252936E20031A3E1 /* FetchTransaction.swift */,
+				02AEFFBD252938EA0031A3E1 /* TransactionView.swift */,
+				02AEFFC02529444E0031A3E1 /* example.json */,
 			);
 			path = EggChain;
 			sourceTree = "<group>";
@@ -149,6 +158,7 @@
 			files = (
 				029613E124F322CE0051B5AD /* Preview Assets.xcassets in Resources */,
 				029613DE24F322CE0051B5AD /* Assets.xcassets in Resources */,
+				02AEFFC12529444E0031A3E1 /* example.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +174,8 @@
 				02C3AB6924F4B1D200D2FB90 /* InfoSheetView.swift in Sources */,
 				02C3AB6B24F4B66900D2FB90 /* Transaction.swift in Sources */,
 				0296140024F3242D0051B5AD /* CodeScanner.swift in Sources */,
+				02AEFFBE252938EA0031A3E1 /* TransactionView.swift in Sources */,
+				02AEFFBB252936E20031A3E1 /* FetchTransaction.swift in Sources */,
 				0296140424F3280E0051B5AD /* Prospect.swift in Sources */,
 				0296140624F328960051B5AD /* PropectsView.swift in Sources */,
 				029613DC24F322C60051B5AD /* ContentView.swift in Sources */,

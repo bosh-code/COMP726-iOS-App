@@ -5,8 +5,8 @@
 //  Created by Ryan Bosher on 24/08/20.
 //
 
-import SwiftUI
 import CoreImage.CIFilterBuiltins
+import SwiftUI
 
 let context = CIContext()
 let filter = CIFilter.qrCodeGenerator()
@@ -14,7 +14,7 @@ let filter = CIFilter.qrCodeGenerator()
 enum ActiveSheet: Identifiable {
 	case info, transaction
 	
-	var id: Int{
+	var id: Int {
 		self.hashValue
 	}
 }
@@ -24,8 +24,7 @@ struct MeView: View {
 	@State private var name = "Ryan Bosher"
 	@State private var emailAddress = "https://bosh.codes/"
 	
-	init() {
-	}
+	init() {}
 	
 	var body: some View {
 		NavigationView {
@@ -34,9 +33,9 @@ struct MeView: View {
 					.resizable()
 					.scaledToFit()
 					.padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
-				HStack{
+				HStack {
 					Spacer()
-					VStack{
+					VStack {
 						Text("Ryan Bosher")
 							.textContentType(.name)
 							.font(.headline)
@@ -64,15 +63,11 @@ struct MeView: View {
 						.padding(EdgeInsets(top: 10, leading: 50, bottom: 10, trailing: 50))
 						.background(Color.blue)
 						.cornerRadius(12)
-					
-					
 				}
 				
 				.buttonStyle(PlainButtonStyle())
 				.frame(maxWidth: .infinity)
 				.padding()
-				
-				
 			}
 			
 			.navigationBarTitle("About")
@@ -82,34 +77,30 @@ struct MeView: View {
 				Text("Info")
 				Image(systemName: "info.circle")
 			})
-					
-					.sheet(item: $activeSheet) { item in
-						switch item {
-						case .info:
-							InfoSheetView()
-							case .transaction:
-							AddTransactionView()
-						}
-					}
-					}
-			}
-			}
-		
-		
-		
-		#if canImport(UIKit)
-		extension View {
-			func hideKeyboard() {
-				UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-			}
-		}
-		#endif
-		
-		
-		struct MeView_Previews: PreviewProvider {
-			static var previews: some View {
-				Group {
-					MeView()
+			.sheet(item: $activeSheet) { item in
+				switch item {
+				case .info:
+					InfoSheetView()
+				case .transaction:
+					AddTransactionView()
 				}
 			}
 		}
+	}
+}
+
+#if canImport(UIKit)
+extension View {
+	func hideKeyboard() {
+		UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+	}
+}
+#endif
+
+struct MeView_Previews: PreviewProvider {
+	static var previews: some View {
+		Group {
+			MeView()
+		}
+	}
+}

@@ -9,11 +9,11 @@ import SwiftUI
 
 struct InfoSheetView: View {
 	var body: some View {
-			VStack {
-				Text("Blockchain Info")
-					.font(.title)
-					.padding()
-				Spacer()
-			}
+		VStack {
+			Text("Blockchain Info")
+				.font(.title)
+				.padding()
+			Spacer()
+		}
 	}
 }
