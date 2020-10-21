@@ -14,21 +14,23 @@ enum FilterType {
 
 struct ProspectsView: View {
 	@State private var isShowingScanner = false
-	@EnvironmentObject var prospects: Prospects
-
-	let filter: FilterType
+//	@EnvironmentObject var prospects: Prospects
+//
+//	let filter: FilterType
 
 	var body: some View {
 		NavigationView {
 			List {
-				ForEach(filteredEggs) { prospect in
-					VStack(alignment: .leading) {
-						Text(prospect.name)
-							.font(.headline)
-						Text(prospect.emailAddress)
-							.foregroundColor(.secondary)
-					}
-				}
+				Text("Hello World")
+//				ForEach(retrievedTransations) {
+//					prospect in
+//					VStack(alignment: .leading) {
+//						Text(prospect.name)
+//							.font(.headline)
+//						Text(prospect.emailAddress)
+//							.foregroundColor(.secondary)
+//					}
+//				}
 				.navigationBarTitle("Your scanned eggs")
 				.navigationBarItems(trailing: Button(action: {
 					self.isShowingScanner = true
@@ -69,16 +71,16 @@ struct ProspectsView: View {
 		}
 	}
 
-	var filteredEggs: [Prospect] {
-		switch filter {
-		case .none:
-			return prospects.people
-		case .contacted:
-			return prospects.people.filter { $0.isContacted }
-		case .uncontacted:
-			return prospects.people.filter { !$0.isContacted }
-		}
-	}
+//	var filteredEggs: [Prospect] {
+//		switch filter {
+//		case .none:
+//			return prospects.people
+//		case .contacted:
+//			return prospects.people.filter { $0.isContacted }
+//		case .uncontacted:
+//			return prospects.people.filter { !$0.isContacted }
+//		}
+//	}
 
 	func handleScan(result: Result<String, CodeScannerView.ScanError>) {
 		isShowingScanner = false
@@ -88,10 +90,10 @@ struct ProspectsView: View {
 			let details = code.components(separatedBy: ",")
 			print(details)
 			guard details.count == 2 else { return }
-			let person = Prospect()
-			person.name = details[0]
-			person.emailAddress = details[1]
-			prospects.people.append(person)
+//			let person = Prospect()
+//			person.name = details[0]
+//			person.emailAddress = details[1]
+//			prospects.people.append(person)
 		case .failure(let error):
 			print("Scanning failed: \(error)")
 		}
@@ -100,6 +102,6 @@ struct ProspectsView: View {
 
 struct ProspectsView_Previews: PreviewProvider {
 	static var previews: some View {
-		ProspectsView(filter: .none)
+		ProspectsView()
 	}
 }
