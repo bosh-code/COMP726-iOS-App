@@ -14,23 +14,22 @@ enum FilterType {
 
 struct ProspectsView: View {
 	@State private var isShowingScanner = false
-//	@EnvironmentObject var prospects: Prospects
-//
-//	let filter: FilterType
-
+	@ObservedObject var fetch = FetchTransaction()
+// MARK: - TODO: Finish this
 	var body: some View {
+		let block = fetch.fetchedBlocks[1]
+		let transaction = block.transactions?[0]
+
 		NavigationView {
-			List {
-				Text("Hello World")
-//				ForEach(retrievedTransations) {
-//					prospect in
-//					VStack(alignment: .leading) {
-//						Text(prospect.name)
-//							.font(.headline)
-//						Text(prospect.emailAddress)
-//							.foregroundColor(.secondary)
-//					}
-//				}
+			List(fetch.fetchedBlocks) { _ in
+				VStack(alignment: .leading) {
+					Text("TEST")
+					Text((transaction?.sender)!)
+					Text((transaction?.recipient)!)
+					Text("\(transaction?.amount! ?? 69)")
+					Text((transaction?.type)!)
+					Text((transaction?.code)!)
+				}
 				.navigationBarTitle("Your scanned eggs")
 				.navigationBarItems(trailing: Button(action: {
 					self.isShowingScanner = true
@@ -70,17 +69,6 @@ struct ProspectsView: View {
 			}
 		}
 	}
-
-//	var filteredEggs: [Prospect] {
-//		switch filter {
-//		case .none:
-//			return prospects.people
-//		case .contacted:
-//			return prospects.people.filter { $0.isContacted }
-//		case .uncontacted:
-//			return prospects.people.filter { !$0.isContacted }
-//		}
-//	}
 
 	func handleScan(result: Result<String, CodeScannerView.ScanError>) {
 		isShowingScanner = false

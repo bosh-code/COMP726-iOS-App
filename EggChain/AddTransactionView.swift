@@ -89,14 +89,14 @@ struct AddTransactionView: View {
 
 		// Create the URL & Request
 		let url = URL(string: "http://192.168.1.69:5000/transactions/new")!
-//		let url = URL(string: "http://172.28.47.188:5000/transactions/new")!
+		// let url = URL(string: "http://172.28.47.188:5000/transactions/new")!
 
 		var request = URLRequest(url: url)
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 		request.httpMethod = "POST"
 		let encoder = JSONEncoder()
 		encoder.outputFormatting = .prettyPrinted
-		let transaction = Transaction(id: 0, sender: sender, recipient: recipient, amount: intAmount, code: code, type: type)
+		let transaction = Transaction( sender: sender, recipient: recipient, amount: intAmount, code: code, type: type)
 		// Try send the request
 		do {
 			let data = try encoder.encode(transaction)

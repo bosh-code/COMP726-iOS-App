@@ -13,15 +13,16 @@ struct TransactionView: View {
 	var body: some View {
 		VStack {
 			// 2.
-			List(fetch.transactions) { transaction in
-				VStack(alignment: .leading) {
-					// 3.
-					Text(transaction.sender ?? "nil")
-					Text("\(transaction.amount ?? 0)") // print boolean
-						.font(.system(size: 11))
-						.foregroundColor(Color.gray)
-				}
-			}
+			Text("Hello World!")
+//			List(fetch.transactions) { transaction in
+//				VStack(alignment: .leading) {
+//					// 3.
+//					Text(transaction.sender ?? "nil")
+//					Text("\(transaction.amount ?? 0)") // print boolean
+//						.font(.system(size: 11))
+//						.foregroundColor(Color.gray)
+//				}
+//			}
 		}
 	}
 }

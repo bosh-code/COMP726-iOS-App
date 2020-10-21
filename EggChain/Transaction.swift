@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct Transaction: Codable, Identifiable {
-	var id: Int?
+struct Transaction: Codable {
 	var sender: String?
 	var recipient: String?
 	var amount: Int64?

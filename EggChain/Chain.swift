@@ -7,7 +7,8 @@ struct Chain: Codable {
 }
 
 // MARK: - Chain
-struct Block: Codable {
+struct Block: Codable, Identifiable {
+	public var id: Int = 0
 	let timestamp: Double?
 	let proof: Int?
 	let transactions: [Transactions]?

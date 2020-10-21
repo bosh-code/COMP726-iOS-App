@@ -13,7 +13,6 @@
 		029613DE24F322CE0051B5AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029613DD24F322CE0051B5AD /* Assets.xcassets */; };
 		029613E124F322CE0051B5AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029613E024F322CE0051B5AD /* Preview Assets.xcassets */; };
 		0296140024F3242D0051B5AD /* CodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029613FF24F3242D0051B5AD /* CodeScanner.swift */; };
-		0296140424F3280E0051B5AD /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296140324F3280D0051B5AD /* Prospect.swift */; };
 		0296140624F328960051B5AD /* PropectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296140524F328960051B5AD /* PropectsView.swift */; };
 		0296140824F3292D0051B5AD /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296140724F3292D0051B5AD /* MeView.swift */; };
 		02AEFFBB252936E20031A3E1 /* FetchTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AEFFBA252936E20031A3E1 /* FetchTransaction.swift */; };
@@ -33,7 +32,6 @@
 		029613E024F322CE0051B5AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		029613E224F322CE0051B5AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029613FF24F3242D0051B5AD /* CodeScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeScanner.swift; sourceTree = "<group>"; };
-		0296140324F3280D0051B5AD /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		0296140524F328960051B5AD /* PropectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropectsView.swift; sourceTree = "<group>"; };
 		0296140724F3292D0051B5AD /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		02AEFFBA252936E20031A3E1 /* FetchTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTransaction.swift; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				029613DD24F322CE0051B5AD /* Assets.xcassets */,
 				029613E224F322CE0051B5AD /* Info.plist */,
 				029613DF24F322CE0051B5AD /* Preview Content */,
-				0296140324F3280D0051B5AD /* Prospect.swift */,
 				0296140524F328960051B5AD /* PropectsView.swift */,
 				0296140724F3292D0051B5AD /* MeView.swift */,
 				02C3AB6824F4B1D200D2FB90 /* InfoSheetView.swift */,
@@ -179,7 +176,6 @@
 				0296140024F3242D0051B5AD /* CodeScanner.swift in Sources */,
 				02AEFFBE252938EA0031A3E1 /* TransactionView.swift in Sources */,
 				02AEFFBB252936E20031A3E1 /* FetchTransaction.swift in Sources */,
-				0296140424F3280E0051B5AD /* Prospect.swift in Sources */,
 				0296140624F328960051B5AD /* PropectsView.swift in Sources */,
 				020C9D6F253FD987001E9821 /* Chain.swift in Sources */,
 				029613DC24F322C60051B5AD /* ContentView.swift in Sources */,
