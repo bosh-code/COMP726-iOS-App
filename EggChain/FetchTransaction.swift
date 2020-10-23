@@ -7,6 +7,7 @@ class FetchTransaction: ObservableObject {
 	@Published var fetchedBlocks = [Block]()
 
 	init() {
+		// MARK: - Add URL here
 		let url = URL(string: "http://192.168.1.69:5000/chain")!
 		// 2.
 		print("Strating...")
