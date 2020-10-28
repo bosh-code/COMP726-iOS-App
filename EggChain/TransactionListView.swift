@@ -7,27 +7,23 @@
 
 import Combine
 import SwiftUI
-
-enum FilterType {
-	case none, contacted, uncontacted
-}
 	
 struct TransactionListView: View {
 	@State private var isShowingScanner = false
 	@ObservedObject var fetch = FetchTransaction()
 // MARK: - TODO: Finish this
 	var body: some View {
-		// let block = fetch.fetchedBlocks[1]
-		// let transaction = block.transactions?[0]
+		let block = fetch.fetchedBlocks[1]
+		let transaction = block.transactions?[0]
 
 		NavigationView {
 			List(fetch.fetchedBlocks) { _ in
 				VStack(alignment: .leading) {
-//					Text((transaction?.sender)!)
-//					Text((transaction?.recipient)!)
-//					Text("\(transaction?.amount! ?? 69)")
-//					Text((transaction?.type)!)
-//					Text((transaction?.code)!)
+					Text((transaction?.sender)!)
+					Text((transaction?.recipient)!)
+					Text("\(transaction?.amount! ?? 69)")
+					Text((transaction?.type)!)
+					Text((transaction?.code)!)
 				}
 				.navigationBarTitle("Your scanned eggs")
 				.navigationBarItems(trailing: Button(action: {
@@ -87,7 +83,7 @@ struct TransactionListView: View {
 	}
 }
 
-struct ProspectsView_Previews: PreviewProvider {
+struct TransactionListView_Previews: PreviewProvider {
 	static var previews: some View {
 		TransactionListView()
 	}

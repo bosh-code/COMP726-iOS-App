@@ -20,6 +20,7 @@
 		02C3AB6924F4B1D200D2FB90 /* InfoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB6824F4B1D200D2FB90 /* InfoSheetView.swift */; };
 		02C3AB6B24F4B66900D2FB90 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB6A24F4B66900D2FB90 /* Transaction.swift */; };
 		02C3AB6D24F50EC600D2FB90 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB6C24F50EC600D2FB90 /* AddTransactionView.swift */; };
+		02D6B02625492A3700B1DEB7 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D6B02525492A3700B1DEB7 /* TransactionRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		02C3AB6824F4B1D200D2FB90 /* InfoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheetView.swift; sourceTree = "<group>"; };
 		02C3AB6A24F4B66900D2FB90 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		02C3AB6C24F50EC600D2FB90 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		02D6B02525492A3700B1DEB7 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				02AEFFBA252936E20031A3E1 /* FetchTransaction.swift */,
 				02AEFFC02529444E0031A3E1 /* exampleChain.json */,
 				020C9D6E253FD987001E9821 /* Chain.swift */,
+				02D6B02525492A3700B1DEB7 /* TransactionRow.swift */,
 			);
 			path = EggChain;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				0296140024F3242D0051B5AD /* CodeScanner.swift in Sources */,
 				02AEFFBB252936E20031A3E1 /* FetchTransaction.swift in Sources */,
 				0296140624F328960051B5AD /* TransactionListView.swift in Sources */,
+				02D6B02625492A3700B1DEB7 /* TransactionRow.swift in Sources */,
 				020C9D6F253FD987001E9821 /* Chain.swift in Sources */,
 				029613DC24F322C60051B5AD /* ContentView.swift in Sources */,
 				029613DA24F322C60051B5AD /* EggChainApp.swift in Sources */,

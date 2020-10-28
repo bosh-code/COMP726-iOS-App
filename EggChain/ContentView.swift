@@ -13,12 +13,7 @@ struct ContentView: View {
 			TransactionListView()
 				.tabItem {
 					Image(systemName: "link.circle.fill")
-					Text("Tab 1")
-				}
-			TransactionListView()
-				.tabItem {
-					Image(systemName: "exclamationmark.circle.fill")
-					Text("Tab 3")
+					Text("Transactions")
 				}
 			MeView()
 				.tabItem {
