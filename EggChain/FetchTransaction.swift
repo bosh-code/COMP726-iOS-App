@@ -3,12 +3,13 @@ import Foundation
 class FetchTransaction: ObservableObject {
 	// 1.
 //	@Published var transactions = [Transaction]()
-	@Published var fetchedTransactions = [Chain]()
+	@Published var chainData = [Chain]()
 	@Published var fetchedBlocks = [Block]()
 
 	init() {
 		// MARK: - Add URL here
-		let url = URL(string: "http://192.168.1.69:5000/chain")!
+
+		let url = URL(string: "http://192.168.1.22:5000/chain")!
 		// 2.
 		print("Strating...")
 		URLSession.shared.dataTask(with: url) { data, _, error in
@@ -26,10 +27,10 @@ class FetchTransaction: ObservableObject {
 					let transactionTest: [Chain] = [decodedData]
 
 					DispatchQueue.main.async {
-						self.fetchedTransactions = transactionTest
+						self.chainData = transactionTest
 						self.fetchedBlocks = decodedData.chain!
 						print("Async")
-						print("\(self.fetchedBlocks[1].transactions?[0].recipient)")
+						print("Sender: \(String(describing: self.fetchedBlocks[1].transactions![0].recipient))")
 					}
 					print("Testing")
 //					print("\(decodedData.chain?[1].transactions?[0].recipient)")

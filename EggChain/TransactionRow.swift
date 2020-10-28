@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TransactionRow: View {
-	var transaction: Transactions
+	var transaction: Transaction
 	
     var body: some View {
 		VStack {
