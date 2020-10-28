@@ -13,17 +13,20 @@ struct TransactionListView: View {
 	@ObservedObject var fetch = FetchTransaction()
 // MARK: - TODO: Finish this
 	var body: some View {
-		let block = fetch.fetchedBlocks[1]
-		let transaction = block.transactions?[0]
+//		let block = fetch.fetchedBlocks[1]
+//		let transaction = block.transactions?[0]
 
 		NavigationView {
-			List(fetch.fetchedBlocks) { _ in
+//			List(fetch.fetchedBlocks) { _ in
+			List() {
+
 				VStack(alignment: .leading) {
-					Text((transaction?.sender)!)
-					Text((transaction?.recipient)!)
-					Text("\(transaction?.amount! ?? 69)")
-					Text((transaction?.type)!)
-					Text((transaction?.code)!)
+//					Text((transaction?.sender)!)
+//					Text((transaction?.recipient)!)
+//					Text("\(transaction?.amount! ?? 69)")
+//					Text((transaction?.type)!)
+//					Text((transaction?.code)!)
+					Text("Test!")
 				}
 				.navigationBarTitle("Your scanned eggs")
 				.navigationBarItems(trailing: Button(action: {

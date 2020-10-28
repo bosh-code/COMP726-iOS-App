@@ -13,4 +13,5 @@ struct Transaction: Codable {
 	var amount: Int64?
 	var code: String?
 	var type: String?
+	var timestamp: String?
 }

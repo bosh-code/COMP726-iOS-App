@@ -11,7 +11,7 @@ struct TransactionRow: View {
 	var transaction: Transactions
 	
     var body: some View {
-		HStack {
+		VStack {
 			Text("Sender: \(transaction.sender!)")
 			Text("Recipient: \(transaction.recipient!)")
 			Text("Amount: \(transaction.amount!)")
