@@ -12,7 +12,7 @@ enum FilterType {
 	case none, contacted, uncontacted
 }
 	
-struct ProspectsView: View {
+struct TransactionListView: View {
 	@State private var isShowingScanner = false
 	@ObservedObject var fetch = FetchTransaction()
 // MARK: - TODO: Finish this
@@ -89,6 +89,6 @@ struct ProspectsView: View {
 
 struct ProspectsView_Previews: PreviewProvider {
 	static var previews: some View {
-		ProspectsView()
+		TransactionListView()
 	}
 }
