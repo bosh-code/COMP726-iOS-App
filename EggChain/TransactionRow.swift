@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TransactionRow: View {
 	var transaction: Transaction
-	
-    var body: some View {
+
+	var body: some View {
 		VStack {
 			Text("Sender: \(transaction.sender!)")
 			Text("Recipient: \(transaction.recipient!)")
@@ -19,11 +19,11 @@ struct TransactionRow: View {
 			Text("Code: \(transaction.code!)")
 			Spacer()
 		}
-    }
+	}
 }
 
-//struct TransactionRow_Previews: PreviewProvider {
+// struct TransactionRow_Previews: PreviewProvider {
 //    static var previews: some View {
 //        TransactionRow(transaction: <#T##Transactions#>)
 //    }
-//}
+// }

@@ -15,7 +15,7 @@ enum ActiveSheet: Identifiable {
 	case info, transaction
 	
 	var id: Int {
-		self.hashValue
+		hashValue
 	}
 }
 
@@ -84,10 +84,12 @@ struct AboutView: View {
 						.progressViewStyle(CircularProgressViewStyle())
 						.padding(4)
 				} else {
-				Image(systemName: "hammer.fill")
+					Image(systemName: "hammer.fill")
 				}
 			})
+
 			// MARK: - TODO: Reformat the sheet selection
+
 			.sheet(item: $activeSheet) { item in
 				switch item {
 				case .info:

@@ -7,25 +7,17 @@
 
 import Combine
 import SwiftUI
-	
+
 struct TransactionListView: View {
 	@State private var isShowingScanner = false
 	@ObservedObject var fetch = FetchTransaction()
-// MARK: - TODO: Finish this
+
+	// MARK: - TODO: Finish this
+
 	var body: some View {
-//		let block = fetch.fetchedBlocks[1]
-//		let transaction = block.transactions?[0]
-
 		NavigationView {
-//			List(fetch.fetchedBlocks) { _ in
-			List() {
-
+			List {
 				VStack(alignment: .leading) {
-//					Text((transaction?.sender)!)
-//					Text((transaction?.recipient)!)
-//					Text("\(transaction?.amount! ?? 69)")
-//					Text((transaction?.type)!)
-//					Text((transaction?.code)!)
 					Text("Test!")
 				}
 				.navigationBarTitle("Transactions")
@@ -76,10 +68,10 @@ struct TransactionListView: View {
 			let details = code.components(separatedBy: ",")
 			print(details)
 			guard details.count == 2 else { return }
-//			let person = Prospect()
-//			person.name = details[0]
-//			person.emailAddress = details[1]
-//			prospects.people.append(person)
+		//			let person = Prospect()
+		//			person.name = details[0]
+		//			person.emailAddress = details[1]
+		//			prospects.people.append(person)
 		case .failure(let error):
 			print("Scanning failed: \(error)")
 		}

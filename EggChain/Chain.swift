@@ -1,12 +1,14 @@
 import Foundation
 
 // MARK: - Welcome
+
 struct Chain: Codable {
 	let chain: [Block]?
 	let length: Int?
 }
 
 // MARK: - Chain
+
 struct Block: Codable, Identifiable {
 	public var id: Int = 0
 	let timestamp: Double?
@@ -23,11 +25,12 @@ struct Block: Codable, Identifiable {
 }
 
 // MARK: - Transaction
-//struct Transactions: Codable {
+
+// struct Transactions: Codable {
 //	let amount: Int?
 //	let recipient, sender, code, type: String?
 //	let timestamp: Double?
-//}
+// }
 
 struct Transaction: Codable {
 	var sender: String?
