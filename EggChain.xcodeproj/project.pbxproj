@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		020C9D6F253FD987001E9821 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020C9D6E253FD987001E9821 /* Chain.swift */; };
+		0280F954254B823E00369923 /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0280F953254B823E00369923 /* Blockchain.swift */; };
+		0280F958254B84C900369923 /* Mine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0280F957254B84C900369923 /* Mine.swift */; };
 		029613DA24F322C60051B5AD /* EggChainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029613D924F322C60051B5AD /* EggChainApp.swift */; };
 		029613DC24F322C60051B5AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029613DB24F322C60051B5AD /* ContentView.swift */; };
 		029613DE24F322CE0051B5AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029613DD24F322CE0051B5AD /* Assets.xcassets */; };
@@ -15,15 +16,13 @@
 		0296140024F3242D0051B5AD /* CodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029613FF24F3242D0051B5AD /* CodeScanner.swift */; };
 		0296140624F328960051B5AD /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296140524F328960051B5AD /* TransactionListView.swift */; };
 		0296140824F3292D0051B5AD /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296140724F3292D0051B5AD /* AboutView.swift */; };
-		02AAD626254AAE7D00008457 /* TransactionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAD625254AAE7D00008457 /* TransactionsContainer.swift */; };
-		02AEFFBB252936E20031A3E1 /* FetchTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AEFFBA252936E20031A3E1 /* FetchTransaction.swift */; };
 		02AEFFC12529444E0031A3E1 /* exampleChain.json in Resources */ = {isa = PBXBuildFile; fileRef = 02AEFFC02529444E0031A3E1 /* exampleChain.json */; };
 		02C3AB6D24F50EC600D2FB90 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3AB6C24F50EC600D2FB90 /* AddTransactionView.swift */; };
-		02D6B02625492A3700B1DEB7 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D6B02525492A3700B1DEB7 /* TransactionRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		020C9D6E253FD987001E9821 /* Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
+		0280F953254B823E00369923 /* Blockchain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockchain.swift; sourceTree = "<group>"; };
+		0280F957254B84C900369923 /* Mine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mine.swift; sourceTree = "<group>"; };
 		029613D624F322C60051B5AD /* EggChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029613D924F322C60051B5AD /* EggChainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggChainApp.swift; sourceTree = "<group>"; };
 		029613DB24F322C60051B5AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,11 +32,8 @@
 		029613FF24F3242D0051B5AD /* CodeScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeScanner.swift; sourceTree = "<group>"; };
 		0296140524F328960051B5AD /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
 		0296140724F3292D0051B5AD /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		02AAD625254AAE7D00008457 /* TransactionsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsContainer.swift; sourceTree = "<group>"; };
-		02AEFFBA252936E20031A3E1 /* FetchTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTransaction.swift; sourceTree = "<group>"; };
-		02AEFFC02529444E0031A3E1 /* exampleChain.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exampleChain.json; sourceTree = "<group>"; };
+		02AEFFC02529444E0031A3E1 /* exampleChain.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = exampleChain.json; sourceTree = "<group>"; };
 		02C3AB6C24F50EC600D2FB90 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
-		02D6B02525492A3700B1DEB7 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +75,9 @@
 				0296140524F328960051B5AD /* TransactionListView.swift */,
 				0296140724F3292D0051B5AD /* AboutView.swift */,
 				02C3AB6C24F50EC600D2FB90 /* AddTransactionView.swift */,
-				02AEFFBA252936E20031A3E1 /* FetchTransaction.swift */,
 				02AEFFC02529444E0031A3E1 /* exampleChain.json */,
-				020C9D6E253FD987001E9821 /* Chain.swift */,
-				02D6B02525492A3700B1DEB7 /* TransactionRow.swift */,
-				02AAD625254AAE7D00008457 /* TransactionsContainer.swift */,
+				0280F953254B823E00369923 /* Blockchain.swift */,
+				0280F957254B84C900369923 /* Mine.swift */,
 			);
 			path = EggChain;
 			sourceTree = "<group>";
@@ -167,14 +161,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				02C3AB6D24F50EC600D2FB90 /* AddTransactionView.swift in Sources */,
+				0280F954254B823E00369923 /* Blockchain.swift in Sources */,
 				0296140824F3292D0051B5AD /* AboutView.swift in Sources */,
-				02AAD626254AAE7D00008457 /* TransactionsContainer.swift in Sources */,
 				0296140024F3242D0051B5AD /* CodeScanner.swift in Sources */,
-				02AEFFBB252936E20031A3E1 /* FetchTransaction.swift in Sources */,
 				0296140624F328960051B5AD /* TransactionListView.swift in Sources */,
-				02D6B02625492A3700B1DEB7 /* TransactionRow.swift in Sources */,
-				020C9D6F253FD987001E9821 /* Chain.swift in Sources */,
 				029613DC24F322C60051B5AD /* ContentView.swift in Sources */,
+				0280F958254B84C900369923 /* Mine.swift in Sources */,
 				029613DA24F322C60051B5AD /* EggChainApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

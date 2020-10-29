@@ -11,7 +11,6 @@ struct AddTransactionView: View {
 	@State private var alertTitle = ""
 	@State private var confirmationMessage = ""
 	@State private var showingConfirmation = false
-	
 	@State private var sender: String = ""
 	@State private var recipient: String = ""
 	@State private var amount: String = ""
@@ -80,7 +79,7 @@ struct AddTransactionView: View {
 		}
 		
 		// Check int amount is correct
-		guard let intAmount = Int64(amount)
+		guard let intAmount = Int(amount)
 		else {
 			print("Failed to convert int")
 			self.alertTitle = "Error"
@@ -98,14 +97,13 @@ struct AddTransactionView: View {
 		// MARK: - Enter URL here
 
 		let url = URL(string: "http://192.168.1.22:5000/transactions/new")!
-		// let url = URL(string: "http://172.28.47.188:5000/transactions/new")!
 		
 		var request = URLRequest(url: url)
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 		request.httpMethod = "POST"
 		let encoder = JSONEncoder()
 		encoder.outputFormatting = .prettyPrinted
-		let transaction = Transaction(sender: sender, recipient: recipient, amount: intAmount, code: code, type: type, timestamp: timestamp)
+		let transaction = Transaction(amount: intAmount, recipient: recipient, sender: sender, code: code, type: type, timestamp: timestamp)
 		// Try send the request
 		do {
 			let data = try encoder.encode(transaction)

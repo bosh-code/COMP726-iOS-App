@@ -10,22 +10,22 @@ import SwiftUI
 
 struct TransactionListView: View {
 	@State private var isShowingScanner = false
-	@ObservedObject var fetch = FetchTransaction()
-	
-
-
-	// MARK: - TODO: Finish this
+	@ObservedObject var fetchToDo = FetchToDo()
 
 	var body: some View {
 		NavigationView {
-			List {
-				Text("Test!")
-				.navigationBarTitle("Transactions")
+			List(fetchToDo.todos) { todo in
+				VStack {
+					Text(todo.title)
+					Text("\(todo.completed.description)")
+						.font(.system(size: 12))
+						.foregroundColor(Color.gray)
+				}
 				.navigationBarItems(trailing: Button(action: {
 					self.isShowingScanner = true
 				}) {
 					Image(systemName: "qrcode.viewfinder")
-					Text("Scan new egg")
+					Text("New Scan")
 				})
 				.sheet(isPresented: $isShowingScanner) {
 					ZStack {
@@ -35,7 +35,7 @@ struct TransactionListView: View {
 								.frame(width: 180, height: 180)
 								.foregroundColor(.white)
 								.padding()
-							Text("Position the egg's QR Code in the viewfinder.")
+							Text("Position the QR Code in the viewfinder.")
 								.font(.body)
 								.foregroundColor(.white)
 						}
@@ -56,7 +56,7 @@ struct TransactionListView: View {
 						}
 					}
 				}
-			}
+			}.navigationBarTitle("Transactions")
 		}
 	}
 
@@ -68,20 +68,38 @@ struct TransactionListView: View {
 			let details = code.components(separatedBy: ",")
 			print(details)
 			guard details.count == 2 else { return }
-		//			let person = Prospect()
-		//			person.name = details[0]
-		//			person.emailAddress = details[1]
-		//			prospects.people.append(person)
 		case .failure(let error):
 			print("Scanning failed: \(error)")
 		}
 	}
-	
-
 }
 
-//struct TransactionListView_Previews: PreviewProvider {
-//	static var previews: some View {
-//		TransactionListView()
-//	}
-//}
+// MARK: - Demo List Population
+
+struct Todo: Codable, Identifiable {
+	public var id: Int
+	public var title: String
+	public var completed: Bool
+}
+
+class FetchToDo: ObservableObject {
+	@Published var todos = [Todo]()
+
+	init() {
+		let url = URL(string: "https://jsonplaceholder.typicode.com/todos")!
+		URLSession.shared.dataTask(with: url) { data, _, _ in
+			do {
+				if let todoData = data {
+					let decodedData = try JSONDecoder().decode([Todo].self, from: todoData)
+					DispatchQueue.main.async {
+						self.todos = decodedData
+					}
+				} else {
+					print("No data")
+				}
+			} catch {
+				print("Error")
+			}
+		}.resume()
+	}
+}

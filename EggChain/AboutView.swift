@@ -105,8 +105,12 @@ struct AboutView: View {
 	}
 	
 	func mine() {
-		isLoading = true
+		
+		// MARK: - Enter URL here
+		
 		let url = URL(string: "http://192.168.1.22:5000/mine")!
+		
+		isLoading = true
 		var request = URLRequest(url: url)
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 		request.httpMethod = "GET"

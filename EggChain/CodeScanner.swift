@@ -131,9 +131,9 @@ public struct CodeScannerView: UIViewControllerRepresentable {
 			super.viewDidLoad()
 			
 			NotificationCenter.default.addObserver(self,
-			                                       selector: #selector(updateOrientation),
-			                                       name: Notification.Name("UIDeviceOrientationDidChangeNotification"),
-			                                       object: nil)
+												   selector: #selector(updateOrientation),
+												   name: Notification.Name("UIDeviceOrientationDidChangeNotification"),
+												   object: nil)
 			
 			view.backgroundColor = UIColor.black
 			captureSession = AVCaptureSession()
