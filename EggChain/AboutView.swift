@@ -112,14 +112,16 @@ struct AboutView: View {
 		request.httpMethod = "GET"
 		let encoder = JSONEncoder()
 		encoder.outputFormatting = .prettyPrinted
+		let session: URLSession = URLSession(configuration: .default)
 		do {
-			URLSession.shared.dataTask(with: request) { data, _, error in
+			session.dataTask(with: request) { data, _, error in
 				guard let data = data else {
 					print("No data in response: \(error?.localizedDescription ?? "Unknown error").")
 					self.alertTitle = "Error"
 					self.confirmationMessage = "\(error?.localizedDescription ?? "An unknown error has occured")"
 					self.showingConfirmation = true
 					isLoading = false
+					session.invalidateAndCancel()
 					return
 				}
 				
@@ -130,7 +132,7 @@ struct AboutView: View {
 					self.alertTitle = "Success"
 					self.confirmationMessage = "\(responseJSON.description.replacingOccurrences(of: "[\"message\": ", with: "").replacingOccurrences(of: "]", with: ""))"
 					self.showingConfirmation = true
-					
+					session.invalidateAndCancel()
 					isLoading = false
 				} else {
 					print("Invalid response from server")
@@ -138,6 +140,7 @@ struct AboutView: View {
 					self.confirmationMessage = "Invalid response from server"
 					self.showingConfirmation = true
 					isLoading = false
+					session.invalidateAndCancel()
 					return
 				}
 			}.resume()

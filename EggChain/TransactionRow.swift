@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct TransactionRow: View {
+struct TransactionRow: View, Identifiable {
+	let id = UUID()
 	var transaction: Transaction
 
 	var body: some View {

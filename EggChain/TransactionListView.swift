@@ -11,15 +11,15 @@ import SwiftUI
 struct TransactionListView: View {
 	@State private var isShowingScanner = false
 	@ObservedObject var fetch = FetchTransaction()
+	
+
 
 	// MARK: - TODO: Finish this
 
 	var body: some View {
 		NavigationView {
 			List {
-				VStack(alignment: .leading) {
-					Text("Test!")
-				}
+				Text("Test!")
 				.navigationBarTitle("Transactions")
 				.navigationBarItems(trailing: Button(action: {
 					self.isShowingScanner = true
@@ -76,10 +76,12 @@ struct TransactionListView: View {
 			print("Scanning failed: \(error)")
 		}
 	}
+	
+
 }
 
-struct TransactionListView_Previews: PreviewProvider {
-	static var previews: some View {
-		TransactionListView()
-	}
-}
+//struct TransactionListView_Previews: PreviewProvider {
+//	static var previews: some View {
+//		TransactionListView()
+//	}
+//}
