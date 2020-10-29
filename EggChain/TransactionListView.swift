@@ -28,7 +28,7 @@ struct TransactionListView: View {
 //					Text((transaction?.code)!)
 					Text("Test!")
 				}
-				.navigationBarTitle("Your scanned eggs")
+				.navigationBarTitle("Transactions")
 				.navigationBarItems(trailing: Button(action: {
 					self.isShowingScanner = true
 				}) {

@@ -15,7 +15,7 @@ struct ContentView: View {
 					Image(systemName: "link.circle.fill")
 					Text("Transactions")
 				}
-			MeView()
+			AboutView()
 				.tabItem {
 					Image(systemName: "questionmark.circle.fill")
 					Text("About")

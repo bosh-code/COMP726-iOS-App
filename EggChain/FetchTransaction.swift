@@ -10,7 +10,7 @@ class FetchTransaction: ObservableObject {
 	init() {
 		// MARK: - Add URL here
 
-		let url = URL(string: "http://192.168.1.69:5000/chain")!
+		let url = URL(string: "http://192.168.1.22:5000/chain")!
 		// 2.
 		print("Strating...")
 		URLSession.shared.dataTask(with: url) { data, _, error in
@@ -31,14 +31,14 @@ class FetchTransaction: ObservableObject {
 						self.chainData = transactionTest
 						self.fetchedBlocks = decodedData.chain!
 						print("Async")
-						print("Sender: \(String(describing: self.fetchedBlocks[1].transactions![0].recipient))")
+//						print("Sender: \(String(describing: self.fetchedBlocks[1].transactions![0].recipient))")
 						
 //						for _ in self.fetchedBlocks {
 //							self.transactionData[0] = self.fetchedBlocks[1].transactions![0]
 //						}
 					}
 					print("Testing")
-					print("\(decodedData.chain?[1].transactions?[0].recipient)")
+//					print("\(decodedData.chain?[1].transactions?[0].recipient)")
 				} else {
 					print("No data to fetch")
 				}
