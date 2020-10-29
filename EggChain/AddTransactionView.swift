@@ -18,6 +18,7 @@ struct AddTransactionView: View {
 	@State private var type: String = ""
 	@State private var code: String = ""
 	@State private var timestamp: String = ""
+	
 	var body: some View {
 		Form {
 			Section(header: Text("New Transaction:")) {
@@ -94,7 +95,7 @@ struct AddTransactionView: View {
 
 		// Create the URL & Request
 		// MARK: - Enter URL here
-		let url = URL(string: "http://192.168.1.22:5000/transactions/new")!
+		let url = URL(string: "http://192.168.1.69:5000/transactions/new")!
 		// let url = URL(string: "http://172.28.47.188:5000/transactions/new")!
 
 		var request = URLRequest(url: url)

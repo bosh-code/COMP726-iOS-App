@@ -80,7 +80,7 @@ struct MeView: View {
 			.sheet(item: $activeSheet) { item in
 				switch item {
 				case .info:
-					InfoSheetView()
+					MineView()
 				case .transaction:
 					AddTransactionView()
 				}
