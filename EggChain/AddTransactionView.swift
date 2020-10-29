@@ -11,12 +11,13 @@ struct AddTransactionView: View {
 	@State private var alertTitle = ""
 	@State private var confirmationMessage = ""
 	@State private var showingConfirmation = false
-
 	@State private var sender: String = ""
 	@State private var recipient: String = ""
 	@State private var amount: String = ""
 	@State private var type: String = ""
 	@State private var code: String = ""
+	@State private var timestamp: String = ""
+	
 	var body: some View {
 		Form {
 			Section(header: Text("New Transaction:")) {
@@ -24,28 +25,28 @@ struct AddTransactionView: View {
 					.textFieldStyle(RoundedBorderTextFieldStyle())
 					.disableAutocorrection(true)
 					.padding(10)
-
+				
 				TextField("Recipient: e.g. Bob", text: $recipient)
 					.textFieldStyle(RoundedBorderTextFieldStyle())
 					.disableAutocorrection(true)
 					.padding(10)
-
+				
 				TextField("Amount: e.g. 1", text: $amount)
 					.keyboardType(.numberPad)
 					.textFieldStyle(RoundedBorderTextFieldStyle())
 					.disableAutocorrection(true)
 					.padding(10)
-
+				
 				TextField("Type: e.g. Caged", text: $type)
 					.textFieldStyle(RoundedBorderTextFieldStyle())
 					.disableAutocorrection(true)
 					.padding(10)
-
+				
 				TextField("Code: e.g. EGG123", text: $code)
 					.textFieldStyle(RoundedBorderTextFieldStyle())
 					.disableAutocorrection(true)
 					.padding(10)
-
+				
 				Button(action: { submit()
 					self.hideKeyboard()
 				}) {
@@ -66,7 +67,7 @@ struct AddTransactionView: View {
 			}
 		}
 	}
-
+	
 	func submit() {
 		// Check form for empty fields
 		if self.sender == "" || self.recipient == "" || self.amount == "" || self.type == "" || self.code == "" {
@@ -76,9 +77,9 @@ struct AddTransactionView: View {
 			self.showingConfirmation = true
 			return
 		}
-
+		
 		// Check int amount is correct
-		guard let intAmount = Int64(amount)
+		guard let intAmount = Int(amount)
 		else {
 			print("Failed to convert int")
 			self.alertTitle = "Error"
@@ -86,23 +87,28 @@ struct AddTransactionView: View {
 			self.showingConfirmation = true
 			return
 		}
-
+		
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+		self.timestamp = dateFormatter.string(from: Date())
+		
 		// Create the URL & Request
-		// MARK: - Enter URL heregit
-		let url = URL(string: "http://192.168.1.69:5000/transactions/new")!
-		// let url = URL(string: "http://172.28.47.188:5000/transactions/new")!
 
+		// MARK: - Enter URL here
+
+		let url = URL(string: "http://192.168.1.22:5000/transactions/new")!
+		
 		var request = URLRequest(url: url)
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 		request.httpMethod = "POST"
 		let encoder = JSONEncoder()
 		encoder.outputFormatting = .prettyPrinted
-		let transaction = Transaction( sender: sender, recipient: recipient, amount: intAmount, code: code, type: type)
+		let transaction = Transaction(amount: intAmount, recipient: recipient, sender: sender, code: code, type: type, timestamp: timestamp)
 		// Try send the request
 		do {
 			let data = try encoder.encode(transaction)
 			request.httpBody = data
-
+			
 			URLSession.shared.dataTask(with: request) { data, _, error in
 				guard let data = data else {
 					print("No data in response: \(error?.localizedDescription ?? "Unknown error").")
@@ -111,7 +117,7 @@ struct AddTransactionView: View {
 					self.showingConfirmation = true
 					return
 				}
-
+				
 				let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
 				if let responseJSON = responseJSON as? [String: Any] {
 					print(responseJSON)

@@ -1,70 +1,156 @@
 {
-   "chain":[
-	  {
-		 "timestamp":624938632.91233504,
-		 "proof":100,
-		 "transactions":[
-			
-		 ],
-		 "previous_hash":"1",
-		 "index":1
-	  },
-	  {
-		 "timestamp":624938978.79517996,
-		 "proof":33575,
-		 "transactions":[
-			{
-			   "amount":1,
-			   "recipient":"Bob",
-			   "sender":"Amy",
-			   "code":"Egg123",
-			   "type":"Caged",
-			   "timestamp":624938933.29891706
-			},
-			{
-			   "amount":1,
-			   "recipient":"8BA649166CB44B9082115AE8B1FAAFF83000000001E6A051CACD1",
-			   "sender":"0",
-			   "code":"BLOCK",
-			   "type":"MINE TRANSACTION",
-			   "timestamp":624938978.76820505
-			}
-		 ],
-		 "previous_hash":"f0744ba643292c0c904e450a3159d4ebb3fae8674cf1b45ce14a5ecf2d04b88e",
-		 "index":2
-	  },
-	  {
-		 "timestamp":624939171.29384005,
-		 "proof":122196,
-		 "transactions":[
-			{
-			   "amount":2,
-			   "recipient":"Cameron",
-			   "sender":"Bob",
-			   "code":"Test456",
-			   "type":"Free range",
-			   "timestamp":624939050.74743795
-			},
-			{
-			   "amount":9,
-			   "recipient":"Dennis",
-			   "sender":"Bob",
-			   "code":"New789",
-			   "type":"Barn",
-			   "timestamp":624939071.63450301
-			},
-			{
-			   "amount":1,
-			   "recipient":"D6974B0EED1F49E0B82AE7C8E8DEDEEB3000000001E96D850F0E1",
-			   "sender":"0",
-			   "code":"BLOCK",
-			   "type":"MINE TRANSACTION",
-			   "timestamp":624939171.28915906
-			}
-		 ],
-		 "previous_hash":"15cabe75fa1e755b42e9fb8474a55a2f7cbdc4dfefac24a20811ecd7bb939c23",
-		 "index":3
-	  }
-   ],
-   "length":3
+  "chain": [
+	{
+	  "timestamp": 625701713.658978,
+	  "proof": 100,
+	  "transactions": [],
+	  "previous_hash": "1",
+	  "index": 1
+	},
+	{
+	  "timestamp": 625701804.493695,
+	  "proof": 33575,
+	  "transactions": [
+		{
+		  "amount": 12,
+		  "recipient": "Second",
+		  "sender": "First",
+		  "code": "Help me please",
+		  "type": "Cage",
+		  "timestamp": "2020-10-30 11:02:00"
+		},
+		{
+		  "amount": 13,
+		  "recipient": "Third",
+		  "sender": "Second",
+		  "code": "Just please work",
+		  "type": "Barn",
+		  "timestamp": "2020-10-30 11:02:32"
+		},
+		{
+		  "amount": 14,
+		  "recipient": "Fourth",
+		  "sender": "Third",
+		  "code": "Omg work",
+		  "type": "Cage",
+		  "timestamp": "2020-10-30 11:02:55"
+		},
+		{
+		  "amount": 1,
+		  "recipient": "8F787BB168244628B05986C11E886D093410000001D80C8B0B40",
+		  "sender": "0",
+		  "code": "BLOCK",
+		  "type": "MINE TRANSACTION",
+		  "timestamp": "2020-10-30 11:03:24"
+		}
+	  ],
+	  "previous_hash": "b5e4197b64d0e4401ea453c04ac3aa7ea874c0c9c1b2f0b3b765461687862d23",
+	  "index": 2
+	},
+	{
+	  "timestamp": 625701942.624581,
+	  "proof": 122196,
+	  "transactions": [
+		{
+		  "amount": 15,
+		  "recipient": "Fifth",
+		  "sender": "Fourth",
+		  "code": "Just work",
+		  "type": "Come on man",
+		  "timestamp": "2020-10-30 11:03:54"
+		},
+		{
+		  "amount": 1,
+		  "recipient": "C48E1ABC129F46C9A4EE2153F418D69C3410000001F8359DFCC0",
+		  "sender": "0",
+		  "code": "BLOCK",
+		  "type": "MINE TRANSACTION",
+		  "timestamp": "2020-10-30 11:05:42"
+		}
+	  ],
+	  "previous_hash": "142daa013b035050b7acaf5121c01dfa5c1ec577e74f3709f3c376c3701f18d8",
+	  "index": 3
+	},
+	{
+	  "timestamp": 625702003.993002,
+	  "proof": 122196,
+	  "transactions": [
+		{
+		  "amount": 1,
+		  "recipient": "4D5CEF9470374CB3833895B564FBD5D83410000002067F52CF91",
+		  "sender": "0",
+		  "code": "BLOCK",
+		  "type": "MINE TRANSACTION",
+		  "timestamp": "2020-10-30 11:06:43"
+		}
+	  ],
+	  "previous_hash": "142daa013b035050b7acaf5121c01dfa5c1ec577e74f3709f3c376c3701f18d8",
+	  "index": 4
+	},
+	{
+	  "timestamp": 625702819.539003,
+	  "proof": 203109,
+	  "transactions": [
+		{
+		  "amount": 1,
+		  "recipient": "429AA9642BC34B3292F421DB5B2CFDCE3410000002C44D05290F",
+		  "sender": "0",
+		  "code": "BLOCK",
+		  "type": "MINE TRANSACTION",
+		  "timestamp": "2020-10-30 11:20:19"
+		}
+	  ],
+	  "previous_hash": "740bce1e6396b176ec2f3e1e64612428d5f569860fe779ac81c1b5da74105f6f",
+	  "index": 5
+	},
+	{
+	  "timestamp": 625702907.521644,
+	  "proof": 57439,
+	  "transactions": [
+		{
+		  "amount": 1,
+		  "recipient": "Bob",
+		  "sender": "Amy",
+		  "code": "Egg123",
+		  "type": "Cage",
+		  "timestamp": "2020-10-30 11:20:59"
+		},
+		{
+		  "amount": 1,
+		  "recipient": "946439A117A64269BFC9E5A252B310F33410000002D8C97D4CFD",
+		  "sender": "0",
+		  "code": "BLOCK",
+		  "type": "MINE TRANSACTION",
+		  "timestamp": "2020-10-30 11:21:47"
+		}
+	  ],
+	  "previous_hash": "215b7a45ed0f8c870e86b3d1cceadfec31d054ef6db7757e98d57f6e6ea3c924",
+	  "index": 6
+	},
+	{
+	  "timestamp": 625703056.157666,
+	  "proof": 84856,
+	  "transactions": [
+		{
+		  "amount": 12,
+		  "recipient": "Greg",
+		  "sender": "Fred",
+		  "code": "Help",
+		  "type": "Barn",
+		  "timestamp": "2020-10-30 11:23:14"
+		},
+		{
+		  "amount": 1,
+		  "recipient": "8EE84A3A99D5435792DD10465DAAB5333410000002FB64C088BE",
+		  "sender": "0",
+		  "code": "BLOCK",
+		  "type": "MINE TRANSACTION",
+		  "timestamp": "2020-10-30 11:24:16"
+		}
+	  ],
+	  "previous_hash": "81032c09a98c251049710d48242fc671d39c0dfddc620c4418b31c1f4cb1f1f3",
+	  "index": 7
+	}
+  ],
+  "length": 7
 }

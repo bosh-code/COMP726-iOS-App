@@ -8,33 +8,24 @@
 import Combine
 import SwiftUI
 
-enum FilterType {
-	case none, contacted, uncontacted
-}
-	
-struct ProspectsView: View {
+struct TransactionListView: View {
 	@State private var isShowingScanner = false
-	@ObservedObject var fetch = FetchTransaction()
-// MARK: - TODO: Finish this
-	var body: some View {
-		// let block = fetch.fetchedBlocks[1]
-		// let transaction = block.transactions?[0]
+	@ObservedObject var fetchToDo = FetchToDo()
 
+	var body: some View {
 		NavigationView {
-			List(fetch.fetchedBlocks) { _ in
-				VStack(alignment: .leading) {
-//					Text((transaction?.sender)!)
-//					Text((transaction?.recipient)!)
-//					Text("\(transaction?.amount! ?? 69)")
-//					Text((transaction?.type)!)
-//					Text((transaction?.code)!)
+			List(fetchToDo.todos) { todo in
+				VStack {
+					Text(todo.title)
+					Text("\(todo.completed.description)")
+						.font(.system(size: 12))
+						.foregroundColor(Color.gray)
 				}
-				.navigationBarTitle("Your scanned eggs")
 				.navigationBarItems(trailing: Button(action: {
 					self.isShowingScanner = true
 				}) {
 					Image(systemName: "qrcode.viewfinder")
-					Text("Scan new egg")
+					Text("New Scan")
 				})
 				.sheet(isPresented: $isShowingScanner) {
 					ZStack {
@@ -44,7 +35,7 @@ struct ProspectsView: View {
 								.frame(width: 180, height: 180)
 								.foregroundColor(.white)
 								.padding()
-							Text("Position the egg's QR Code in the viewfinder.")
+							Text("Position the QR Code in the viewfinder.")
 								.font(.body)
 								.foregroundColor(.white)
 						}
@@ -65,7 +56,7 @@ struct ProspectsView: View {
 						}
 					}
 				}
-			}
+			}.navigationBarTitle("Transactions")
 		}
 	}
 
@@ -77,18 +68,38 @@ struct ProspectsView: View {
 			let details = code.components(separatedBy: ",")
 			print(details)
 			guard details.count == 2 else { return }
-//			let person = Prospect()
-//			person.name = details[0]
-//			person.emailAddress = details[1]
-//			prospects.people.append(person)
 		case .failure(let error):
 			print("Scanning failed: \(error)")
 		}
 	}
 }
 
-struct ProspectsView_Previews: PreviewProvider {
-	static var previews: some View {
-		ProspectsView()
+// MARK: - Demo List Population
+
+struct Todo: Codable, Identifiable {
+	public var id: Int
+	public var title: String
+	public var completed: Bool
+}
+
+class FetchToDo: ObservableObject {
+	@Published var todos = [Todo]()
+
+	init() {
+		let url = URL(string: "https://jsonplaceholder.typicode.com/todos")!
+		URLSession.shared.dataTask(with: url) { data, _, _ in
+			do {
+				if let todoData = data {
+					let decodedData = try JSONDecoder().decode([Todo].self, from: todoData)
+					DispatchQueue.main.async {
+						self.todos = decodedData
+					}
+				} else {
+					print("No data")
+				}
+			} catch {
+				print("Error")
+			}
+		}.resume()
 	}
 }

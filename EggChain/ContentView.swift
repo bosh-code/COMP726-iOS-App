@@ -8,28 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+	
+	@State private var selectedTab = 0
+	
+	let numTabs = 2
+	let minDragTranslationForSwipe: CGFloat = 50
+	
 	var body: some View {
-		TabView {
-			ProspectsView()
+		TabView (selection: $selectedTab) {
+			TransactionListView()
 				.tabItem {
 					Image(systemName: "link.circle.fill")
-					Text("Tab 1")
-				}
-			TransactionView()
-				.tabItem {
-					Image(systemName: "link.icloud.fill")
-					Text("Transaction View")
-				}
-			ProspectsView()
-				.tabItem {
-					Image(systemName: "exclamationmark.circle.fill")
-					Text("Tab 3")
-				}
-			MeView()
+					Text("Transactions")
+				}.tag(0)
+				.highPriorityGesture(DragGesture().onEnded({ self.handleSwipe(translation: $0.translation.width)}))
+			AboutView()
 				.tabItem {
 					Image(systemName: "questionmark.circle.fill")
 					Text("About")
-				}
+				}.tag(1)
+				.highPriorityGesture(DragGesture().onEnded({ self.handleSwipe(translation: $0.translation.width)}))
+		}
+	}
+	
+	private func handleSwipe(translation: CGFloat) {
+		if translation > minDragTranslationForSwipe && selectedTab > 0 {
+			selectedTab -= 1
+		} else  if translation < -minDragTranslationForSwipe && selectedTab < numTabs-1 {
+			selectedTab += 1
 		}
 	}
 }
