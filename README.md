@@ -20,6 +20,15 @@ The EggBlockchain repo hosts code for the macOS Swift node this app interfaces w
 * Clone the repo into XCode using GitHub or clone locally and open the .xcodeproj.
 * Change the development team to your own and confirm build targets are correct.
 
+### Screenshots 
+![List View][list]
+![About View][about]
+![Add View][add]
+
+[list]: https://github.com/bosh-code/COMP726-iOS-App/blob/main/Assets/list.PNG "List View"
+[about]: https://github.com/bosh-code/COMP726-iOS-App/blob/main/Assets/about.PNG "About View"
+[add]: https://github.com/bosh-code/COMP726-iOS-App/blob/main/Assets/add.PNG "Add View"
+
 ## Features
 
 * If you are running a simulated device, ensure that you download the sample QR code and choose it when using the scanner.
