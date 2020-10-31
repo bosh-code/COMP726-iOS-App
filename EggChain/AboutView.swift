@@ -108,7 +108,7 @@ struct AboutView: View {
 		
 		// MARK: - Enter URL here
 		
-		let url = URL(string: "http://192.168.1.22:5000/mine")!
+		let url = URL(string: "http://172.20.10.2/mine")!
 		
 		isLoading = true
 		var request = URLRequest(url: url)
