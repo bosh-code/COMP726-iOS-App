@@ -36,8 +36,3 @@ The EggBlockchain repo hosts code for the macOS Swift node this app interfaces w
 ## Licensing
 
 This project is licensed under Unlicense license.
-
-## Acknowledgments
-
-* Paul Hudson for the [QRCode Scanner](https://github.com/twostraws/CodeScanner)
-* Harsh Vishwakarma for the basis of the [Swift Blockchain](https://medium.com/@mhacnagbani/blockchain-by-swift-cddd4e1d02eb)
