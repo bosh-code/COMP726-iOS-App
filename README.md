@@ -2,7 +2,7 @@
 > A blockchain-based iOS app for source traceability of eggs in NZ.
 
 Third-year blockchain paper assignment. Used as a vessel to learn Swift & SwiftUI as well as blockchain implementation.
-A demonstration of how source traceability of New Zealand eggs could be implemented using a chain.
+A demonstration of how source traceability of New Zealand eggs could be implemented using a chain. A very fast prototype trying out SwiftUI.
 
 ## Companion blockchain node repo
 
